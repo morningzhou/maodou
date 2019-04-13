@@ -1,0 +1,4 @@
+<resources>
+    <!-- home page  -->
+    <dimen name="home_tabhost_height">16dp</dimen>
+</resources>
