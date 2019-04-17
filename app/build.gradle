@@ -36,6 +36,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
     implementation 'com.danikula:videocache:2.7.0'
-    implementation project(':jiaozivideoplayer')
-//    implementation 'cn.jzvd:jiaozivideoplayer:7.0_preview'
+//    implementation project(':jiaozivideoplayer')
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.3'
 }
