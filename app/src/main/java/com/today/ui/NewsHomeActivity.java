@@ -1,30 +1,37 @@
 package com.today.ui;
 
+import android.accounts.NetworkErrorException;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.today.R;
 import com.today.base.BaseFragment;
 import com.today.fragment.MeFragment;
 import com.today.fragment.NewsFragment;
 import com.today.fragment.VideoFragment;
+import com.today.utils.UpdateAppHttpUtil;
+import com.vector.update_app.UpdateAppManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewsHomeActivity extends AppCompatActivity  {
 
+    private static final String TAG = "NewsHomeActivity";
     private FrameLayout mFlcontent;
     private FragmentTabHost mTabHost;
+    private final String mUpdateUrl ="http://192.168.1.104:8080/maodou/maodou.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,11 @@ public class NewsHomeActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         initView();
         initFragmentTabHost();
+        try {
+            update();
+        }catch (Exception e){
+            Log.d(TAG,"networkError : error:"+e.toString());
+        }
     }
 
     private void initView() {
@@ -93,4 +105,16 @@ public class NewsHomeActivity extends AppCompatActivity  {
         }
     }
 
+    private void update() {
+        new UpdateAppManager
+                .Builder()
+                //当前Activity
+                .setActivity(this)
+                //更新地址
+                .setUpdateUrl(mUpdateUrl)
+                //实现httpManager接口的对象
+                .setHttpManager(new UpdateAppHttpUtil())
+                .build()
+                .update();
+    }
 }

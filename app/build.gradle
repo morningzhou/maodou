@@ -37,5 +37,7 @@ dependencies {
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
     implementation 'com.danikula:videocache:2.7.0'
     implementation project(':jiaozivideoplayer')
+    implementation 'com.qianwen:update-app:3.5.2'
+    implementation 'com.qianwen:okhttp-utils:3.8.0'
 //    implementation 'cn.jzvd:jiaozivideoplayer:7.0_preview'
 }

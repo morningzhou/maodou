@@ -160,8 +160,8 @@ public class VideoFragment extends BaseFragment {
     public void initData() {
         OkHttpClient okHttpClient = new OkHttpClient();
         Request request = new Request.Builder()
-                .header("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNTQ3NzcyNTc5LCJleHAiOjE1NzkzMDg1Nzl9.gWsdfhZZOZ3_q600egIAZqGMeVSlEdFaaFTpWocAcFOi0-827LTxsCtH2FhwU2H4qMjBKThL76D6q8HdkaO5cA")
-                .url("  http://47.107.75.100:8080/kite/app/video/list?page="+mIndex+"&limit=10")
+                .header("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNTQwMzA0OTIyLCJleHAiOjE1NzE4NDA5MjJ9.zXgMklt8EtKEesuV79fbKD0OUJKaNEhBTtEGRMp0kt89QN2ytIU5Y5_fUc1CbFDgFheP60btUmB54-uXDfkolQ")
+                .url("http://47.107.75.100:8080/kite/app/video/list?page="+mIndex+"&limit=10")
                 .method("GET", null)
                 .build();
         Call call = okHttpClient.newCall(request);
@@ -198,7 +198,6 @@ public class VideoFragment extends BaseFragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(mContext, "请求数据成功", Toast.LENGTH_SHORT).show();
                         mAdapterRecyclerViewVideo.notifyDataSetChanged();
                     }
                 });
