@@ -64,7 +64,7 @@ public class NewsHomeActivity extends AppCompatActivity  {
         List<TabInfo> tabInfos = new ArrayList<>();
         tabInfos.add(new TabInfo("视频", R.drawable.tab_icon_explore, new VideoFragment().getClass()));
         tabInfos.add(new TabInfo("新闻", R.drawable.tab_icon_new, new NewsFragment().getClass()));
-//        tabInfos.add(new TabInfo("我的", R.drawable.tab_icon_me, new MeFragment().getClass()));
+        tabInfos.add(new TabInfo("关于", R.drawable.tab_icon_me, new MeFragment().getClass()));
 
         for (int i = 0; i < tabInfos.size(); i++) {
             TabInfo tabInfo = tabInfos.get(i);

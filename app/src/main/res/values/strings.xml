@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">毛豆视频</string>
+    <string name="app_version">当前的版本：%1$s</string>
 </resources>
